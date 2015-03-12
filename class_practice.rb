@@ -1,120 +1,60 @@
 ##Create an Empty class named 'Person'
-
-
-
-
-
-
+def Person
+end
 
 
 
 ##Define three properties on that class 'name','age','birthdate'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+def create
+  @Person = Person.create(Person_params)
+  @name = @Person.name.create(name_params)
+  @age = @Person.age.create(age_params)
+  @birthdate = @Person.birthdate.create(birthdate_params)
+else
+  render 'new'
+end
+end
 
 ##Define 'methods' that allow you to access and set all three of those properties, Do not use attribute accessor
-=begin
 
-
-
-
-
-
-
-
-
-
-=end
+def Person_params
+  params.require(:Person).permit(:name, :age, :birthdate)
+end
 
 
 
 ##Explain what calling Person.new does
-=begin
 
-
-
-
-
-
-
-
-=end
-
+Person.new creates a new Person with the data that they need to have with them.
 
 
 
 ##Create an initializer method that allows you do Person.new 'Amy Smith' , which initializes the  Person's name property
 
-
-
-
-
-
-
-
+class Person
+  def initialize
+    @name = "Amy Smith"
+  end
+end
 
 
 
 ##Write a method that outputs the value of the self keyword to the console
 
-
-
-
-
-
-
-
-
+def self
+  print "self"
+end
 
 
 ##Explain in as much detail as possible what self refers to and what it means in the grand scheme of things
-=begin
+
+(Self refers to the user at the time. It means that you will be able to tell who the person is at the time)
 
 
-
-
-
-
-
-
-
-
-
-=end
 
 ##Explain what object instantiation means:
 =begin
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+It's when an object is created from a class.
 
 =end
 
@@ -138,7 +78,7 @@ class PersonC
 end
 
 =begin
-
+Local variable is something that is defined like print_name & instance variable is something repeated throughout that instance such as def name.
 
 
 =end
@@ -148,14 +88,7 @@ end
 #Explain in detail what a method is
 
 =begin
-
-
-
-
-
-
-
-
+A method is set of expressions that returns a value like def print_name above.
 
 
 =end
@@ -176,13 +109,7 @@ end
 
 =begin
 
-
-
-
-
-
-
-
+Instance method uses a specific instance of a class & class method is called whenever a class name is used.
 
 =end
 
@@ -208,12 +135,7 @@ end
 person.say_name_again
 
 =begin
-
-
-
-
-
-
+It is possible to add methods to an object, but I'm not sure it's done right above. I think it shoudl all be done within the same Def area.
 
 =end
 
@@ -223,13 +145,7 @@ person.say_name_again
 #What does the ? mark at the end of a method signify?
 
 =begin
-
-
-
-
-
-
-
+It means that it returns a true or false statement.
 
 
 =end
@@ -238,15 +154,7 @@ person.say_name_again
 #What does the ! sign at the end of a method signify?
 
 =begin
-
-
-
-
-
-
-
-
-
+It modifies the object it's called on.
 
 =end
 
